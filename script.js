@@ -5,15 +5,14 @@ function setup() {
 function draw() {
   background(200);
 
-  //this is a call to myShape()
-  myShape(width / 2, height / 2, 1);
-  // myShape() takes three arguments
-  // arg1: horizontal location
-  // arg2: vertical location
-  // arg3: scale factor (1 is full size)
-  /* add two more calls to myShape that draw your shape in different locations
-  */
+   
+    myShape(width / 2, height / 2, 1);
+
+    
+    myShape(width / 4, height / 4, 0.8);
   
+   
+    myShape(width * 3 / 4, height * 3 / 4, 1.2);
 }
 
 function myShape(x, y, s) {
@@ -21,8 +20,25 @@ function myShape(x, y, s) {
   push(); // make a separate layer
   translate(x, y); // move the origin point
   scale(s);
+    // Body
+  line(0, -50, 40, -20);
+  line(0, -50, -40, -20);
+  fill(255);
+  ellipse(0, 0, 55);
+  ellipse(0, -35, 40);
+  ellipse(0, -60, 30);
+  fill(0);
+  rectMode(CENTER);
+  rect(0, -82, 20, 20);
+  line(-20, -72, 20, -72);
+  ellipse(-7, -65, 5);
+  ellipse(7, -65, 5);
+  ellipse(0, -60, 5);
+  ellipse(0, -40, 5);
+  ellipse(0, -30, 5);
+  ellipse(0, -20, 5);
   
-  ellipse(0, 0, w, h); // simple ellipse at the translated origin (0,0)
-  
-  pop(); // dispose of the layer
+  // REFERENCE TO LAB 5 used the snowman
+
+  pop(); // restore previous drawing state
 }
